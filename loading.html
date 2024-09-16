@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash Screen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        body { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            background-color: black; 
+            margin: 0; 
+            color: white;
+            font-family: 'Exo';
+        }
+        .splash-content { 
+            text-align: center;
+            font-size:12px;
+        }
+
+        .splash-content img {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="splash-content">
+        <h1 id="welcomeMessage" data-aos="fade-in"><b></b></h1>
+        <img src="loading.gif" alt="" />
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const welcomeMessage = document.getElementById("welcomeMessage");
+
+            welcomeMessage.textContent = `Sedang Memuat...`;
+
+            setTimeout(function() {
+                window.location.href = "game 1.html";
+            }, 3000); 
+        });
+    </script>
+          <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 120, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 3000,
+      });
+    </script>
+</body>
+</html>

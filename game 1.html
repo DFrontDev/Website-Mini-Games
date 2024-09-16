@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Games Tebak-Tebakan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style type="text/css" media="all">
+      *{
+        font-family: 'Exo';
+      }
+      .container{
+        padding: 30% 0;
+      }
+      .container h1{
+        font-size: 40px;
+      }
+      .question{
+        background: #f0f8ff;
+      }
+      .btn{
+        background: #1e90ff;
+      }
+      .form-control{
+        border: 2px solid #3498db;
+      }
+      .scoreboard{
+        color: #f39c12;
+      }
+      #finalScore{
+        width: 100%;
+        height: 300px;
+        background:#1e90ff ;
+        padding: 5px;
+        border: 2px solid #1e90ff;
+      }
+    </style>
+<body class="bg-dark">
+    <div class="container">
+        <h1 class="text-center text-white m-5 fw-bold">Mini Games</h1>
+        <div id="game">
+            <div id="question" class="question shadow text-black fs-4 fw-medium p-5 text-center">Soal akan muncul di sini</div>
+            <input type="text" id="answerInput" class="form-control my-4 border-primary" placeholder="Masukkan jawaban anda disini">
+            <button id="submitAnswer" class="btn text-white mt-2 fw-bold">Cek Jawaban</button>
+            <a href="index.html" class="btn mt-2 fw-bold text-white" style="background:#f39c12;" id="kembali">Kembali ke Home</a>
+            <div id="result" class="result"></div>
+            <div class="scoreboard mt-3 fw-bold">
+                Skor: <span id="score">0</span>
+            </div>
+        </div>
+        <div id="finalScore" class="mt-3 shadow text-center" style="display: none;">
+            <h2 class="text-white text-center py-5 bg-dark">Total Skor: <span id="totalScore"></span></h2>
+            <a href="index.html" class="btn mt-2 fw-bold text-white" style="background:#f39c12;">Kembali ke Home</a>
+        </div>
+    </div>
+
+    <!-- Modal Pop-up untuk Jawaban Salah -->
+    <div class="modal fade" id="wrongAnswerModal" tabindex="-1" aria-labelledby="wrongAnswerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="wrongAnswerModalLabel">Jawaban Salah</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Jawaban salah, coba lagi!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Pop-up untuk Jawaban Benar -->
+    <div class="modal fade" id="correctAnswerModal" tabindex="-1" aria-labelledby="correctAnswerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="correctAnswerModalLabel">Jawaban Benar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Jawaban Anda Benar!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="nextQuestionButton" class="btn btn-primary" data-bs-dismiss="modal">Lanjut ke Soal Berikutnya</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="game 1.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
